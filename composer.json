@@ -4,8 +4,12 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
-	},
+		"laravel/framework": "4.2.*",
+	        "laracasts/validation": "~1.0",
+                "laracasts/commander": "~1.0",
+                "laracasts/flash": "~1.0",
+                "laracasts/presenter": "0.1.*"
+        },
 	"autoload": {
 		"classmap": [
 			"app/commands",
@@ -14,7 +18,11 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+                "files": ["app/Acme/helpers.php"],
+                "psr-4": {
+                    "Acme\\": "app/Acme"
+                }
 	},
 	"scripts": {
 		"post-install-cmd": [
@@ -32,5 +40,14 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+        "repositories": [
+            {"type": "composer" , "url": "http://pkg.phpcomposer.com/repo/packagist/"},
+            {"packagist": false}
+        ],
+	"require-dev": {
+		"way/generators": "2.*",
+                "codeception/codeception": "~2.0",
+                "laracasts/testdummy": "~1.0"
+	}
 }

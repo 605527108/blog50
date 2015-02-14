@@ -1,0 +1,14 @@
+Acme\Users\User:
+    username: $string
+    email: $string@example.com
+    password: $string
+    created_at: $date
+    updated_at: $date
+    remember_token: $string
+
+Acme\Statuses\Status:
+    user_id:
+        type: Acme\Users\User
+    body: $text
+    created_at: $date
+    updated_at: $date
